@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+@import "@fontsource/outfit/latin-600.css";
+@import "@fontsource/fraunces/latin-500.css";
+@import "@fontsource/fraunces/latin-600.css";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+
+  --color-bg: #f3efe7;
+  --color-surface: #fffcf7;
+  --color-ink: #1a1714;
+  --color-muted: #6f675e;
+  --color-faint: #a39b91;
+  --color-line: #e4ddd2;
+  --color-line-strong: #d3c9bb;
+
+  --color-primary: #1e4d3a;
+  --color-primary-fg: #f4f7f4;
+  --color-primary-soft: #e4efe8;
+
+  --color-warn: #8a5a1e;
+  --color-warn-soft: #f6ecd9;
+  --color-alert: #8d3b2b;
+  --color-alert-soft: #f8e7e2;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.125rem;
+
+  --shadow-card: 0 1px 2px rgb(26 23 20 / 0.04), 0 18px 40px -28px rgb(26 23 20 / 0.55);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-weight: 500;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
